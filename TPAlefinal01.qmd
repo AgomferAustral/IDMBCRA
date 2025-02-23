@@ -80,14 +80,14 @@ guardar_y_limpiar <- function(df) {
   saveRDS(df, archivo)
   
   # Borramos el dataframe de la memoria
-  rm(df)
+  rm(list = nombre_archivo, envir = .GlobalEnv)
   
   # Limpiamos la memoria (recolectar basura)
-  gc()
+  invisible(gc(full = TRUE))
   
   # Confirmamos con mensaje|
   cat("El archivo se ha guardado como", archivo, "y la memoria ha sido limpiada.\n")
-}
+} 
 
 
 ```
@@ -492,6 +492,10 @@ boxplots <- map(names(df_seleccionados), ~ {
 
 # Presentamos los gráficos en una matriz
 do.call(grid.arrange, c(boxplots, ncol = 3))
+
+# Guardamos la lista de los boxplots
+guardar_y_limpiar(boxplots)
+
 ```
 
 
@@ -544,6 +548,10 @@ walk(outliers_list, ~ {
   # Mostramos la cantidad total de outliers
   cat("Cantidad total de outliers:", nrow(.x$outliers), "\n\n")
 })
+
+# Borramos la lista de outliers
+guardar_y_limpiar(outliers_list)
+
 
 ```
 
@@ -608,6 +616,12 @@ ggpairs(
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 
+
+# Borramos la matriz que ya no usamos
+guardar_y_limpiar(matriz_corr)
+
+# Guardamos las imagenes que ya no usamos
+guardar_y_limpiar(plots)
 
 ```
 
