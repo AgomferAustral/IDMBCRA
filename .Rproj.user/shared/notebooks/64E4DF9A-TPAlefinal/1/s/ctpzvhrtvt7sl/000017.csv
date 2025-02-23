@@ -1,0 +1,8 @@
+"0","# Correlaciones 3"
+"0",""
+"0","library(GGally)"
+"2","Registered S3 method overwritten by 'GGally':
+  method from   
+  +.gg   ggplot2
+"
+"0","ggpairs(col_numericas)  # Gráfico de pares alternativo"

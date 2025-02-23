@@ -1,0 +1,23 @@
+"0","# Utilizamos la función skim para describir la distribución univariada de cada columna
+skimr::skim(df2_limpia)
+"
+"1","── Data Summary ────────────────────────
+"
+"1","                           Values    
+"
+"1","Name                       df2_limpia
+"
+"1","Number of rows             14        
+"
+"1","Number of columns          23        
+"
+"1","_______________________              
+"
+"1","Column type frequency:               
+"
+"1","  AsIs                     23        
+"
+"1","________________________             
+"
+"1","Group variables            None      
+"

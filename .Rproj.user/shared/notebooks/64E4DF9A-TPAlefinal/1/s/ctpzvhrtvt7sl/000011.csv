@@ -1,0 +1,7 @@
+"0",""
+"0","#"
+"0","# Correlaciones 2 "
+"0","#"
+"0",""
+"0","# Guardamos el gráfico en un archivo PNG"
+"0","png(""pairs_panels.png"", width = 1200, height = 1200)"
